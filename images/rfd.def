@@ -1,0 +1,53 @@
+Bootstrap: docker
+From: nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04
+
+%post
+    set -e
+
+    echo "basic system packages"
+    apt-get update && apt-get install -y \
+        git \
+        wget \
+        curl \
+        ca-certificates \
+        python3 \
+        python3-pip \
+        python3-venv \
+        build-essential \
+        && rm -rf /var/lib/apt/lists/*
+
+    echo "python setup"
+    ln -sf /usr/bin/python3 /usr/bin/python
+    python -m pip install --upgrade pip
+
+    echo "install pytorch (CUDA 12.1)"
+    pip install torch --index-url https://download.pytorch.org/whl/cu121
+
+    python -m pip install --upgrade pip
+    python -m pip install --no-cache-dir \
+      "git+https://github.com/FabianFuchsML/se3-transformer-public.git"
+
+    echo "install RFdiffusion python dependencies"
+    pip install \
+        numpy \
+        scipy \
+        pandas \
+        biopython \
+        matplotlib \
+        tqdm \
+        hydra-core \
+        omegaconf \
+        einops \
+        dm-tree
+
+    echo "clone RFdiffusion"
+    git clone https://github.com/RosettaCommons/RFdiffusion.git /opt/RFdiffusion
+
+    echo "done"
+
+%environment
+    export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
+    export PYTHONUNBUFFERED=1
+
+%runscript
+    exec "$@"

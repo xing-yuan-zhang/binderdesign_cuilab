@@ -1,0 +1,7 @@
+outputs/
+logs/
+cache/
+envs/
+*.out
+*.err
+*.pt
