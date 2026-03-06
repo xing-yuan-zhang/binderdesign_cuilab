@@ -14,7 +14,7 @@ An example designed binder targeting **human FNBP1 (PDB: 2EFL)** is shown below.
 <img src="docs/fnbp1_scheme.png" width="900">
 </p>
 
-The generated binder forms a **three-helix bundle (3HB)** that packs against the receptor interface.
+The generated binder forms a three-helix bundle that packs against the receptor interface.
 
 AlphaFold-based complex prediction metrics:
 
@@ -49,25 +49,25 @@ Removes designs with steric clashes or unrealistic packing.
 
 **Geometry scoring**
 
-Prioritizes interfaces consistent with **helical packing motifs**.
+Prioritizes interfaces consistent with helical packing motifs.
 
 ---
 
-# Repository Structure
+### Repository Structure
 
-
+```
 protein-design-pipeline
 
-configs/ RFdiffusion design specifications
-scripts/ execution scripts
-parent/ receptor structures
-models/ RFdiffusion checkpoints
-images/ container images
-docs/ figures and descriptions
+configs/   RFdiffusion design specifications
+scripts/   execution scripts
+inputs/    receptor structures
+models/    RFdiffusion checkpoints
+images/    container images
+docs/      figures and descriptions
 
-outputs/ generated backbones and designs
-logs/ job logs
-
+outputs/   generated backbones and designs
+logs/      job logs
+```
 
 ---
 
