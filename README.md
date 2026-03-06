@@ -56,7 +56,7 @@ Prioritizes interfaces consistent with helical packing motifs.
 ### Repository Structure
 
 ```
-protein-design-pipeline
+diffusion-protein-design
 
 configs/   RFdiffusion design specifications
 scripts/   execution scripts
