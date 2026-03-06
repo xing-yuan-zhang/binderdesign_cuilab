@@ -1,58 +1,109 @@
-# Protein Design Pipeline
+# Diffusion-model based protein binder design pipeline
 
-A minimal RFdiffusion-based pipeline for protein binder generation.
+A minimal ML–driven pipeline for de novo protein binder generation using structure-conditioned generative models.
 
-The workflow performs:
+This repository implements a modular workflow combining RFdiffusion for backbone generation, ProteinMPNN for sequence design, and AlphaFold2 for structure validation.
 
-RFdiffusion → backbone generation  
-ProteinMPNN → sequence design  
-AlphaFold2 → structural validation
+Additional geometric filters are applied to prioritize structurally plausible helical interfaces.
 
-This repository focuses on the generative stage using RFdiffusion.
+# Example design
 
-## Repository Structure
+An example designed binder targeting **human FNBP1 (PDB: 2EFL)** is shown below.
+
+<p align="center">
+<img src="docs/fnbp1_scheme.png" width="900">
+</p>
+
+The generated binder forms a **three-helix bundle (3HB)** that packs against the receptor interface.
+
+AlphaFold-based complex prediction metrics:
+
+| metric | value |
+|------|------|
+| pLDDT | 0.91 |
+| ipTM | 0.74 |
+| ipAE | 12.47 |
+| binder bound/unbound RMSD | 0.40 |
+
+These metrics suggest a stable binder conformation with a consistent predicted binding mode.
+
+---
+
+# Pipeline overview
+
+The design workflow combines diffusion-based structure generation with neural sequence design and structural filtering.
+
+<p align="center">
+<img src="docs/pipeline.png" width="900">
+</p>
+
+Additional structural filters improve design quality:
+
+**Sidechain packing**
+
+Adds designed residues and reconstructs sidechain geometry.
+
+**Clash / overlap filtering**
+
+Removes designs with steric clashes or unrealistic packing.
+
+**Geometry scoring**
+
+Prioritizes interfaces consistent with **helical packing motifs**.
+
+---
+
+# Repository Structure
+
 
 protein-design-pipeline
 
-scripts/  
-    run_rfdiffusion.sh  
+configs/ RFdiffusion design specifications
+scripts/ execution scripts
+parent/ receptor structures
+models/ RFdiffusion checkpoints
+images/ container images
+docs/ figures and descriptions
 
-configs/  
-    design configuration files  
+outputs/ generated backbones and designs
+logs/ job logs
 
-inputs/  
-    input structures  
 
-models/  
-    RFdiffusion checkpoints  
+---
 
-images/  
-    Apptainer container  
+# Running the Pipeline
 
-outputs/  
-    generated designs  
+Example SLURM submission:
 
-## Running on HPC
-
-Example:
 
 sbatch scripts/run_rfdiffusion.sh configs/headtail.txt
 
-Each SLURM array job generates designs with different random seeds.
 
-## Requirements
+Each SLURM array task samples independent diffusion trajectories using different random seeds.
+
+---
+
+# Requirements
+
+- RFdiffusion  
+- ProteinMPNN  
+- AlphaFold2  
+- PyTorch  
+- Apptainer / Singularity  
+- GPU-enabled HPC environment
+
+---
+
+# References
 
 RFdiffusion  
-SE3Transformer  
-PyTorch  
-Apptainer / Singularity
+Watson et al. *Nature* (2023)  
+https://doi.org/10.1038/s41586-023-06415-8
 
-## Pipeline Overview
+ProteinMPNN  
+Dauparas et al. *Science* (2022)  
+https://doi.org/10.1126/science.add2187
 
-RFdiffusion generates candidate binder backbones constrained by
-target interface regions and hotspot residues.
-
-Multiple seeds are sampled in parallel on GPU nodes.
-
-Generated structures can then be passed to downstream sequence
-design and structure validation stages.
+AlphaFold2  
+Jumper et al. *Nature* (2021)  
+https://doi.org/10.1038/s41586-021-03819-2
