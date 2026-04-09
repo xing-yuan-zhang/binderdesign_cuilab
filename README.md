@@ -8,20 +8,22 @@ This repository is a part of ongoing research efforts in ADC design and
 molecular modeling of tissue transglutaminase 2 (TG2) family and transducer of cdc42-dependent actin assembly (Toca) family in the [Cui Lab](https://cuilab.stanford.edu/research),
 Stanford University.
 
-```text
-RFdiffusion
-  -> light QC / restore
-  -> ProteinMPNN
-  -> AlphaFold2 / AlphaFold3
-  -> task geometry
-  -> Rosetta InterfaceAnalyzer
-  -> Rosetta FastRelax robustness
-  -> Rosetta DDG
-  -> clustering
-  -> final picks
+```mermaid
+flowchart LR
+    A[RFdiffusion] --> B[light QC / restore]
+    B --> C[ProteinMPNN]
+    C --> D[AlphaFold2 / AlphaFold3]
+    D --> E[Geometry filtering]
+    E --> F[Rosetta InterfaceAnalyzer]
+    F --> G[FastRelax robustness]
+    G --> H[DDG filtering]
+    H --> I[Clustering]
+    I --> J[Final picks]
 ```
 
 The library is designed for Stanford Marlowe, but it also installs locally as a normal Python package.
+
+![Scheme of transducer of cdc42-dependent actin assembly](assets/scheme.png)
 
 ## Update 260408
 
