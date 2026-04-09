@@ -5,3 +5,7 @@ envs/
 *.out
 *.err
 *.pt
+.venv/
+projects/
+**/__pycache__/
+*.pyc

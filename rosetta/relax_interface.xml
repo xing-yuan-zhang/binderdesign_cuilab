@@ -1,0 +1,37 @@
+<ROSETTASCRIPTS>
+  <SCOREFXNS>
+    <ScoreFunction name="sfxn" weights="ref2015" />
+  </SCOREFXNS>
+
+  <RESIDUE_SELECTORS>
+    <Chain name="chain1" chains="A" />
+    <Chain name="chain2" chains="B" />
+    <Neighborhood name="nb_chain1" selector="chain1" distance="8.0" include_focus_in_subset="true" />
+    <Neighborhood name="nb_chain2" selector="chain2" distance="8.0" include_focus_in_subset="true" />
+    <Or name="iface_nb" selectors="nb_chain1,nb_chain2" />
+    <Not name="noniface" selector="iface_nb" />
+  </RESIDUE_SELECTORS>
+
+  <TASKOPERATIONS>
+    <OperateOnResidueSubset name="repack_iface" selector="iface_nb">
+      <RestrictToRepackingRLT/>
+    </OperateOnResidueSubset>
+
+    <OperateOnResidueSubset name="freeze_noniface" selector="noniface">
+      <PreventRepackingRLT/>
+    </OperateOnResidueSubset>
+  </TASKOPERATIONS>
+
+  <MOVERS>
+    <FastRelax name="fastrelax_iface"
+               scorefxn="sfxn"
+               repeats="1"
+               task_operations="repack_iface,freeze_noniface" />
+  </MOVERS>
+
+  <PROTOCOLS>
+    <Add mover="fastrelax_iface" />
+  </PROTOCOLS>
+
+  <OUTPUT scorefxn="sfxn" />
+</ROSETTASCRIPTS>

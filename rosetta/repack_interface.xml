@@ -1,0 +1,41 @@
+<ROSETTASCRIPTS>
+  <SCOREFXNS>
+    <ScoreFunction name="sfxn" weights="ref2015" />
+  </SCOREFXNS>
+
+  <RESIDUE_SELECTORS>
+    <InterfaceByVector name="iface" jump="1" cb_dist_cut="8.0" nearby_atom_cut="6.0" vector_angle_cut="75" />
+    <Neighborhood name="iface_nb" selector="iface" distance="8.0" include_focus_in_subset="true" />
+  </RESIDUE_SELECTORS>
+
+  <MOVEMAP_FACTORIES>
+    <MoveMapFactory name="mmf_iface_chi">
+      <Backbone enable="false" />
+      <Chi enable="false" />
+      <Chi selector="iface_nb" />
+      <!-- <Backbone selector="iface_nb" /> if relax backbone -->
+    </MoveMapFactory>
+  </MOVEMAP_FACTORIES>
+
+  <CONSTRAINT_GENERATORS>
+    <CoordinateConstraintGenerator name="ccg" sd="0.5" ca_only="1" />
+  </CONSTRAINT_GENERATORS>
+
+  <MOVERS>
+    <AddConstraints name="add_cc" constraint_generators="ccg" />
+    <FastRelax name="fastrelax_iface"
+               scorefxn="sfxn"
+               repeats="1"
+               movemap_factory="mmf_iface_chi"
+               cartesian="0"
+               ramp_down_constraints="0"
+               constrain_relax_to_start_coords="1" />
+  </MOVERS>
+
+  <PROTOCOLS>
+    <Add mover="add_cc" />
+    <Add mover="fastrelax_iface" />
+  </PROTOCOLS>
+
+  <OUTPUT scorefxn="sfxn" />
+</ROSETTASCRIPTS>
