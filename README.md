@@ -1,6 +1,6 @@
-# Binder Design-Cui Lab
+# binderdesign-cuilab
 
-Package for de novo protein binder design and large-scale screening,
+`binderdesign-cuilab` is a package for de novo protein binder design and large-scale screening,
 combining generative modeling (RFdiffusion), sequence design (ProteinMPNN),
 structure prediction (AlphaFold2/3), and physics-based evaluation (Rosetta).
 
