@@ -1,0 +1,75 @@
+HEADER    ENDOCYTOSIS/EXOCYTOSIS                  23-FEB-07   XXXX              
+TITLE     CRYSTAL STRUCTURE OF THE EFC DOMAIN OF FORMIN-BINDING PROTEIN 17      
+KEYWDS    EFC DOMAIN, STRUCTURAL GENOMICS, NPPSFA, NATIONAL PROJECT ON PROTEIN  
+KEYWDS   2 STRUCTURAL AND FUNCTIONAL ANALYSES, RIKEN STRUCTURAL                 
+KEYWDS   3 GENOMICS/PROTEOMICS INITIATIVE, RSGI, ENDOCYTOSIS-EXOCYTOSIS COMPLEX 
+EXPDTA    X-RAY DIFFRACTION                                                     
+AUTHOR    A.SHIMADA,H.NIWA,T.TERADA,M.SHIROUZU,S.YOKOYAMA,RIKEN STRUCTURAL      
+AUTHOR   2 GENOMICS/PROTEOMICS INITIATIVE (RSGI)                                
+JRNL        AUTH   A.SHIMADA,H.NIWA,K.TSUJITA,S.SUETSUGU,K.NITTA,               
+JRNL        AUTH 2 K.HANAWA-SUETSUGU,R.AKASAKA,Y.NISHINO,M.TOYAMA,L.CHEN,       
+JRNL        AUTH 3 Z.-J.LIU,B.-C.WANG,M.YAMAMOTO,T.TERADA,A.MIYAZAWA,A.TANAKA,  
+JRNL        AUTH 4 S.SUGANO,M.SHIROUZU,K.NAGAYAMA,T.TAKENAWA,S.YOKOYAMA         
+JRNL        TITL   CURVED EFC/F-BAR-DOMAIN DIMERS ARE JOINED END TO END INTO A  
+JRNL        TITL 2 FILAMENT FOR MEMBRANE INVAGINATION IN ENDOCYTOSIS            
+JRNL        REF    CELL(CAMBRIDGE,MASS.)         V. 129   761 2007              
+JRNL        REFN                   ISSN 0092-8674                               
+JRNL        PMID   17512409                                                     
+JRNL        DOI    10.1016/J.CELL.2007.03.040                                   
+SEQRES   1 A  305  GLY PRO LEU GLY SER MSE SER TRP GLY THR GLU LEU TRP          
+SEQRES   2 A  305  ASP GLN PHE ASP ASN LEU GLU LYS HIS THR GLN TRP GLY          
+SEQRES   3 A  305  ILE ASP ILE LEU GLU LYS TYR ILE LYS PHE VAL LYS GLU          
+SEQRES   4 A  305  ARG THR GLU ILE GLU LEU SER TYR ALA LYS GLN LEU ARG          
+SEQRES   5 A  305  ASN LEU SER LYS LYS TYR GLN PRO LYS LYS ASN SER LYS          
+SEQRES   6 A  305  GLU GLU GLU GLU TYR LYS TYR THR SER CYS LYS ALA PHE          
+SEQRES   7 A  305  ILE SER ASN LEU ASN GLU MSE ASN ASP TYR ALA GLY GLN          
+SEQRES   8 A  305  HIS GLU VAL ILE SER GLU ASN MSE ALA SER GLN ILE ILE          
+SEQRES   9 A  305  VAL ASP LEU ALA ARG TYR VAL GLN GLU LEU LYS GLN GLU          
+SEQRES  10 A  305  ARG LYS SER ASN PHE HIS ASP GLY ARG LYS ALA GLN GLN          
+SEQRES  11 A  305  HIS ILE GLU THR CYS TRP LYS GLN LEU GLU SER SER LYS          
+SEQRES  12 A  305  ARG ARG PHE GLU ARG ASP CYS LYS GLU ALA ASP ARG ALA          
+SEQRES  13 A  305  GLN GLN TYR PHE GLU LYS MSE ASP ALA ASP ILE ASN VAL          
+SEQRES  14 A  305  THR LYS ALA ASP VAL GLU LYS ALA ARG GLN GLN ALA GLN          
+SEQRES  15 A  305  ILE ARG HIS GLN MSE ALA GLU ASP SER LYS ALA ASP TYR          
+SEQRES  16 A  305  SER SER ILE LEU GLN LYS PHE ASN HIS GLU GLN HIS GLU          
+SEQRES  17 A  305  TYR TYR HIS THR HIS ILE PRO ASN ILE PHE GLN LYS ILE          
+SEQRES  18 A  305  GLN GLU MSE GLU GLU ARG ARG ILE VAL ARG MSE GLY GLU          
+SEQRES  19 A  305  SER MSE LYS THR TYR ALA GLU VAL ASP ARG GLN VAL ILE          
+SEQRES  20 A  305  PRO ILE ILE GLY LYS CYS LEU ASP GLY ILE VAL LYS ALA          
+SEQRES  21 A  305  ALA GLU SER ILE ASP GLN LYS ASN ASP SER GLN LEU VAL          
+SEQRES  22 A  305  ILE GLU ALA TYR LYS SER GLY PHE GLU PRO PRO GLY ASP          
+SEQRES  23 A  305  ILE GLU PHE GLU ASP TYR THR GLN PRO MSE LYS ARG THR          
+SEQRES  24 A  305  VAL SER ASP ASN SER LEU                                      
+HETNAM     MSE SELENOMETHIONINE                                                 
+FORMUL   1  MSE    8(C5 H11 N O2 SE)                                            
+FORMUL   2  HOH   *120(H2 O)                                                    
+HELIX    1   1 SER A    2  LEU A    7  1                                   6    
+HELIX    2   2 GLN A   10  TYR A   53  1                                  44    
+HELIX    3   3 TYR A   67  ASP A  161  1                                  95    
+HELIX    4   4 THR A  165  THR A  207  1                                  43    
+HELIX    5   5 THR A  207  ARG A  239  1                                  33    
+HELIX    6   6 GLN A  240  SER A  258  1                                  19    
+HELIX    7   7 ASP A  260  LYS A  273  1                                  14    
+LINK         C   MSE A   1                 N   SER A   2     1555   1555  1.33  
+LINK         C   GLU A  79                 N   MSE A  80     1555   1555  1.32  
+LINK         C   MSE A  80                 N   ASN A  81     1555   1555  1.33  
+LINK         C   ASN A  93                 N   MSE A  94     1555   1555  1.33  
+LINK         C   MSE A  94                 N   ALA A  95     1555   1555  1.33  
+LINK         C   LYS A 157                 N   MSE A 158     1555   1555  1.33  
+LINK         C   MSE A 158                 N   ASP A 159     1555   1555  1.33  
+LINK         C   GLN A 181                 N   MSE A 182     1555   1555  1.32  
+LINK         C   MSE A 182                 N   ALA A 183     1555   1555  1.33  
+LINK         C   GLU A 218                 N   MSE A 219     1555   1555  1.33  
+LINK         C   MSE A 219                 N   GLU A 220     1555   1555  1.33  
+LINK         C   ARG A 226                 N   MSE A 227     1555   1555  1.33  
+LINK         C   MSE A 227                 N   GLY A 228     1555   1555  1.33  
+LINK         C   SER A 230                 N   MSE A 231     1555   1555  1.33  
+LINK         C   MSE A 231                 N   LYS A 232     1555   1555  1.33  
+CRYST1  200.985   41.397   56.467  90.00 105.12  90.00 C 1 2 1       4          
+ORIGX1      1.000000  0.000000  0.000000        0.00000                         
+ORIGX2      0.000000  1.000000  0.000000        0.00000                         
+ORIGX3      0.000000  0.000000  1.000000        0.00000                         
+SCALE1      0.004975  0.000000  0.001344        0.00000                         
+SCALE2      0.000000  0.024156  0.000000        0.00000                         
+SCALE3      0.000000  0.000000  0.018344        0.00000                         
+MODEL        1                                                                  

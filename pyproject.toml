@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "binderdesign-cuilab"
+version = "0.1.0"
+description = "End-to-end RFdiffusion -> ProteinMPNN -> AlphaFold2/3 -> Rosetta binder design workflow"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "gemmi>=0.6",
+]
+
+[project.scripts]
+"binderdesign-cuilab" = "binderdesign_cuilab.cli:main"
+"binderdesign-cuilab-table" = "binderdesign_cuilab.table:main"
+
+[tool.setuptools]
+packages = ["binderdesign_cuilab"]
