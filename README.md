@@ -12,8 +12,6 @@ Stanford University.
 
 The library is designed for Stanford Marlowe, but it also installs locally as a normal Python package.
 
-![Example design of transducer of cdc42-dependent actin assembly](assets/example.png)
-
 ## Update 260408
 
 - Project orchestration: `binderdesign-cuilab project ...` or top-level `binderdesign-cuilab run-project ...`
@@ -108,6 +106,8 @@ binderdesign-cuilab run-project \
   --submit-marlowe \
   --dry-run
 ```
+
+![Example design of transducer of cdc42-dependent actin assembly](assets/example.png)
 
 ## Project Layout
 
