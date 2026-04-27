@@ -1,11 +1,11 @@
-# binderdesign_cuilab
+# Generative protein binder design and structural screening framework
 
-`binderdesign_cuilab` is a package for de novo protein binder design and large-scale screening,
+This repository contains `binderdesign_cuilab`, which is an internal package for de novo protein binder design and large-scale screening,
 combining generative modeling (RFdiffusion), sequence design (ProteinMPNN),
-structure prediction (AlphaFold2/3), and physics-based evaluation (Rosetta).
+structure prediction (AlphaFold), and physics-based evaluation (Rosetta).
 
 This repository is a part of ongoing research efforts in ADC design and
-molecular modeling of tissue transglutaminase 2 (TG2) family and transducer of cdc42-dependent actin assembly (Toca) family in the [Cui Lab](https://cuilab.stanford.edu/research),
+molecular modeling in the [Cui Lab](https://cuilab.stanford.edu/research),
 Stanford University.
 
 ![Workflow scheme](assets/scheme.png)
